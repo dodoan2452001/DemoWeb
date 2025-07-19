@@ -1,0 +1,240 @@
+.vocab-nav button.active {
+  background: #e0e7ff;
+  color: #1e293b;
+  font-weight: bold;
+}
+.login-bg {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+}
+.login-form-wrapper {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2.5rem 2rem 2rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(44, 62, 112, 0.15);
+  min-width: 320px;
+  max-width: 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-form h2 {
+  margin-bottom: 2rem;
+  color: #1e293b;
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+.login-form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1.5px solid #38bdf8;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  outline: none;
+  background: #f7fafc;
+}
+.login-form .login {
+  width: 100%;
+  padding: 0.75rem;
+  background: #38bdf8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+}
+.login-form .login:hover {
+  background: #0ea5e9;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #f7fafc 0%, #e0f7fa 100%);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.vocab-app {
+  min-height: 100vh;
+  min-width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #e0e7ff 0%, #38bdf8 100%);
+}
+
+.vocab-header {
+  background: #1e293b;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(30, 41, 59, 0.08);
+}
+.logo {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  position: static;
+  padding: 0;
+}
+.logo-text {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  color: #38bdf8;
+}
+.vocab-nav {
+  display: flex;
+  gap: 1.5rem;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+.vocab-nav button {
+  background: none;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background 0.2s, color 0.2s;
+}
+.vocab-nav button:hover {
+  background: #e0e7ff;
+  color: #1e293b;
+  font-weight: bold;
+}
+.auth-buttons .login {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #38bdf8;
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.auth-buttons .signup {
+  background: #38bdf8;
+  color: #1e293b;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.vocab-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0;
+}
+.vocab-main h1 {
+  color: #1e293b;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 1rem;
+}
+.search-bar input {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid #38bdf8;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+}
+.search-btn {
+  background: #38bdf8;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: background 0.2s;
+}
+.search-btn:hover {
+  background: #0ea5e9;
+}
+.search-options {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  color: #1e293b;
+  font-weight: 500;
+}
+.vocab-options {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.option-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(30, 41, 59, 0.08);
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 180px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: box-shadow 0.2s;
+}
+.option-card:hover {
+  box-shadow: 0 4px 16px rgba(30, 41, 59, 0.12);
+}
+.option-card.blue {
+  border-top: 6px solid #38bdf8;
+}
+.option-card.pink {
+  border-top: 6px solid #f472b6;
+}
+.option-card.green {
+  border-top: 6px solid #34d399;
+}
+.vocab-footer {
+  background: #1e293b;
+  color: #38bdf8;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
