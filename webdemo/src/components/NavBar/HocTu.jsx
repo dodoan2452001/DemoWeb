@@ -65,18 +65,18 @@ const DAILY_WORDS = [
 
 function HocTu() {
   const [learned, setLearned] = useState([]);
+  const [words] = useState(DAILY_WORDS);
+  const needReview = learned.length > 0 && learned.length < words.length;
 
   const handleMarkLearned = (word) => {
     if (!learned.includes(word)) {
       const newLearned = [...learned, word];
       setLearned(newLearned);
-      if (newLearned.length === DAILY_WORDS.length) {
+      if (newLearned.length === words.length) {
         alert("Bạn đã hoàn thành bài học hôm nay!");
       }
     }
   };
-
-  const needReview = learned.length > 0 && learned.length < DAILY_WORDS.length;
 
   return (
     <div className="page-content" style={{ position: "relative" }}>
@@ -100,8 +100,8 @@ function HocTu() {
               marginLeft: "2rem",
             }}
           >
-            Bạn còn {DAILY_WORDS.length - learned.length} từ chưa thuộc, hãy ôn
-            tập tiếp nhé!
+            Bạn còn {words.length - learned.length} từ chưa thuộc, hãy ôn tập
+            tiếp nhé!
           </div>
         )}
       </div>
@@ -116,7 +116,7 @@ function HocTu() {
           paddingRight: "12px",
         }}
       >
-        {DAILY_WORDS.map((w) => (
+        {words.map((w) => (
           <div
             key={w.word}
             style={{

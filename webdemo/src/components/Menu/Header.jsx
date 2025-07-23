@@ -32,7 +32,11 @@ function Header({
           >
             Danh sách từ
           </button>
-          <button style={{ marginLeft: "0.5rem" }} disabled>
+          <button
+            className={currentPage === "luyentap" ? "active" : ""}
+            style={{ marginLeft: "0.5rem" }}
+            onClick={() => onNavClick("luyentap")}
+          >
             Luyện tập
           </button>
         </nav>

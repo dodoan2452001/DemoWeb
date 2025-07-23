@@ -8,6 +8,7 @@ import Footer from "./components/Menu/Footer";
 import HocTu from "./components/NavBar/HocTu";
 import TuDien from "./components/NavBar/TuDien";
 import DanhSachTu from "./components/NavBar/DanhSachTu";
+import LuyenTap from "./components/NavBar/LuyenTap";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -36,6 +37,7 @@ function App() {
     if (currentPage === "hoctu") return <HocTu />;
     if (currentPage === "tudien") return <TuDien />;
     if (currentPage === "danhsachtu") return <DanhSachTu />;
+    if (currentPage === "luyentap") return <LuyenTap />;
     return <MainContent />;
   };
 
