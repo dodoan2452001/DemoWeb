@@ -34,7 +34,6 @@ function Header({
           </button>
           <button
             className={currentPage === "luyentap" ? "active" : ""}
-            style={{ marginLeft: "0.5rem" }}
             onClick={() => onNavClick("luyentap")}
           >
             Luyện tập

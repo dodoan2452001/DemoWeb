@@ -17,12 +17,13 @@ export default function LuyenTap() {
   const [quizOptions, setQuizOptions] = useState([]);
   const [quizInput, setQuizInput] = useState("");
   const [quizResult, setQuizResult] = useState("");
+  const [showNextBtn, setShowNextBtn] = useState(false);
   const [quizScore, setQuizScore] = useState(0);
   const [quizDone, setQuizDone] = useState(false);
   const [currentSubType, setCurrentSubType] = useState(null); // for random mode
 
   useEffect(() => {
-    const data = localStorage.getItem("words");
+    const data = localStorage.getItem("vocab_words");
     if (data) {
       try {
         setWords(JSON.parse(data));
@@ -46,14 +47,13 @@ export default function LuyenTap() {
     setQuizResult("");
     setQuizInput("");
     if (type === 5) {
-      setCurrentSubType(randomSubType());
+      const firstSub = randomSubType();
+      setCurrentSubType(firstSub);
+      setTimeout(() => genOptions(5, quizArr, 0, firstSub), 0);
     } else {
       setCurrentSubType(null);
+      setTimeout(() => genOptions(type, quizArr, 0, null), 0);
     }
-    setTimeout(
-      () => genOptions(type, quizArr, 0, type === 5 ? currentSubType : null),
-      0
-    );
   }
 
   function randomSubType() {
@@ -100,23 +100,11 @@ export default function LuyenTap() {
         : `Sai! Đáp án: ${type === 3 ? current.word : current.meaning}`
     );
     if (correct) setQuizScore((s) => s + 1);
-    setTimeout(() => {
-      if (quizIdx + 1 >= quizList.length) {
-        setQuizDone(true);
-      } else {
-        const nextIdx = quizIdx + 1;
-        setQuizIdx(nextIdx);
-        setQuizInput("");
-        setQuizResult("");
-        if (quizType === 5) {
-          const nextSub = randomSubType();
-          setCurrentSubType(nextSub);
-          genOptions(5, quizList, nextIdx, nextSub);
-        } else {
-          genOptions(quizType, quizList, nextIdx, null);
-        }
-      }
-    }, 800);
+    if (type === 1 || type === 3) {
+      setShowNextBtn(true);
+    } else if (type === 2) {
+      setShowNextBtn(true); // chỉ hiện nút Câu tiếp theo, không chuyển câu tự động
+    }
   }
 
   useEffect(() => {
@@ -182,7 +170,7 @@ export default function LuyenTap() {
           {quizOptions.map((opt) => (
             <button
               key={opt}
-              onClick={() => handleQuizAnswer(opt)}
+              onClick={() => !quizResult && handleQuizAnswer(opt)}
               style={{
                 display: "block",
                 width: "100%",
@@ -192,11 +180,47 @@ export default function LuyenTap() {
                 border: "1px solid #38bdf8",
                 background: "#f0f9ff",
                 cursor: "pointer",
+                opacity: quizResult ? 0.7 : 1,
+                pointerEvents: quizResult ? "none" : "auto",
               }}
             >
               {opt}
             </button>
           ))}
+          {quizResult && showNextBtn && (
+            <button
+              style={{
+                marginTop: 16,
+                background: "#6366f1",
+                color: "#fff",
+                border: "none",
+                borderRadius: 8,
+                padding: "8px 24px",
+                fontWeight: "bold",
+                cursor: "pointer",
+              }}
+              onClick={() => {
+                setShowNextBtn(false);
+                if (quizIdx + 1 >= quizList.length) {
+                  setQuizDone(true);
+                } else {
+                  const nextIdx = quizIdx + 1;
+                  setQuizIdx(nextIdx);
+                  setQuizInput("");
+                  setQuizResult("");
+                  if (quizType === 5) {
+                    const nextSub = randomSubType();
+                    setCurrentSubType(nextSub);
+                    genOptions(5, quizList, nextIdx, nextSub);
+                  } else {
+                    genOptions(quizType, quizList, nextIdx, null);
+                  }
+                }
+              }}
+            >
+              Câu tiếp theo
+            </button>
+          )}
         </>
       );
     } else if (type === 2) {
@@ -208,7 +232,10 @@ export default function LuyenTap() {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              handleQuizAnswer(quizInput);
+              if (!quizResult) {
+                handleQuizAnswer(quizInput);
+                setShowNextBtn(true);
+              }
             }}
           >
             <input
@@ -222,6 +249,7 @@ export default function LuyenTap() {
                 border: "1px solid #ccc",
                 marginBottom: 12,
               }}
+              disabled={!!quizResult}
             />
             <button
               type="submit"
@@ -232,12 +260,49 @@ export default function LuyenTap() {
                 borderRadius: 6,
                 padding: "8px 24px",
                 fontWeight: "bold",
-                cursor: "pointer",
+                cursor: quizResult ? "not-allowed" : "pointer",
+                opacity: quizResult ? 0.7 : 1,
               }}
+              disabled={!!quizResult}
             >
               Kiểm tra
             </button>
           </form>
+          {quizResult && showNextBtn && (
+            <button
+              style={{
+                marginTop: 16,
+                background: "#6366f1",
+                color: "#fff",
+                border: "none",
+                borderRadius: 8,
+                padding: "8px 24px",
+                fontWeight: "bold",
+                cursor: "pointer",
+              }}
+              onClick={() => {
+                setShowNextBtn(false);
+                if (quizIdx + 1 >= quizList.length) {
+                  setQuizDone(true);
+                } else {
+                  const nextIdx = quizIdx + 1;
+                  setQuizIdx(nextIdx);
+                  setQuizInput("");
+                  setQuizResult("");
+                  setShowNextBtn(false);
+                  if (quizType === 5) {
+                    const nextSub = randomSubType();
+                    setCurrentSubType(nextSub);
+                    genOptions(5, quizList, nextIdx, nextSub);
+                  } else {
+                    genOptions(quizType, quizList, nextIdx, null);
+                  }
+                }
+              }}
+            >
+              Câu tiếp theo
+            </button>
+          )}
         </>
       );
     } else if (type === 3) {
@@ -249,7 +314,7 @@ export default function LuyenTap() {
           {quizOptions.map((opt) => (
             <button
               key={opt}
-              onClick={() => handleQuizAnswer(opt)}
+              onClick={() => !quizResult && handleQuizAnswer(opt)}
               style={{
                 display: "block",
                 width: "100%",
@@ -259,11 +324,47 @@ export default function LuyenTap() {
                 border: "1px solid #38bdf8",
                 background: "#f0f9ff",
                 cursor: "pointer",
+                opacity: quizResult ? 0.7 : 1,
+                pointerEvents: quizResult ? "none" : "auto",
               }}
             >
               {opt}
             </button>
           ))}
+          {quizResult && showNextBtn && (
+            <button
+              style={{
+                marginTop: 16,
+                background: "#6366f1",
+                color: "#fff",
+                border: "none",
+                borderRadius: 8,
+                padding: "8px 24px",
+                fontWeight: "bold",
+                cursor: "pointer",
+              }}
+              onClick={() => {
+                setShowNextBtn(false);
+                if (quizIdx + 1 >= quizList.length) {
+                  setQuizDone(true);
+                } else {
+                  const nextIdx = quizIdx + 1;
+                  setQuizIdx(nextIdx);
+                  setQuizInput("");
+                  setQuizResult("");
+                  if (quizType === 5) {
+                    const nextSub = randomSubType();
+                    setCurrentSubType(nextSub);
+                    genOptions(5, quizList, nextIdx, nextSub);
+                  } else {
+                    genOptions(quizType, quizList, nextIdx, null);
+                  }
+                }
+              }}
+            >
+              Câu tiếp theo
+            </button>
+          )}
         </>
       );
     }

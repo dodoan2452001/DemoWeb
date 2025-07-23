@@ -86,7 +86,7 @@ function TuDien() {
       >
         <input
           type="text"
-          placeholder="Nhập từ cần tra..."
+          placeholder="Nhập từ cần kiểm tra..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           style={{

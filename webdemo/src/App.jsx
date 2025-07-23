@@ -9,6 +9,7 @@ import HocTu from "./components/NavBar/HocTu";
 import TuDien from "./components/NavBar/TuDien";
 import DanhSachTu from "./components/NavBar/DanhSachTu";
 import LuyenTap from "./components/NavBar/LuyenTap";
+import TuTraCuu from "./components/Main/TuTraCuu";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -60,7 +61,10 @@ function App() {
         currentPage={currentPage}
       />
       {getContent()}
-      {currentPage !== "danhsachtu" && currentPage !== "hoctu" && <Footer />}
+      {currentPage !== "danhsachtu" &&
+        currentPage !== "hoctu" &&
+        currentPage !== "luyentap" &&
+        currentPage !== "tudien" && <Footer />}
     </div>
   );
 }
