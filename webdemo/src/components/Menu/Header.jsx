@@ -24,7 +24,7 @@ function Header({
             className={currentPage === "tudien" ? "active" : ""}
             onClick={() => onNavClick("tudien")}
           >
-            Từ điển
+            Tìm kiếm từ điển
           </button>
           <button
             className={currentPage === "danhsachtu" ? "active" : ""}

@@ -5,61 +5,121 @@ const DAILY_WORDS = [
     word: "apple",
     meaning: "quả táo",
     example: "I eat an apple every morning.",
-    image: "https://cdn-icons-png.flaticon.com/512/415/415733.png",
+    emoji: "🍎", // táo
   },
   {
     word: "book",
     meaning: "quyển sách",
     example: "She is reading a book.",
-    image: "https://cdn-icons-png.flaticon.com/512/167/167755.png",
+    emoji: "📚", // sách
   },
   {
     word: "car",
     meaning: "xe ô tô",
     example: "My father drives a car.",
-    image: "https://cdn-icons-png.flaticon.com/512/743/743007.png",
+    emoji: "🚗", // xe ô tô
   },
   {
     word: "dog",
     meaning: "con chó",
     example: "The dog is barking.",
-    image: "https://cdn-icons-png.flaticon.com/512/616/616408.png",
+    emoji: "🐕", // con chó
   },
   {
     word: "house",
     meaning: "ngôi nhà",
     example: "Her house is very big.",
-    image: "https://cdn-icons-png.flaticon.com/512/616/616494.png",
+    emoji: "🏠", // ngôi nhà
   },
   {
     word: "pen",
     meaning: "cây bút",
     example: "I write with a pen.",
-    image: "https://cdn-icons-png.flaticon.com/512/167/167753.png",
+    emoji: "✏️", // cây bút
   },
   {
     word: "cat",
     meaning: "con mèo",
     example: "The cat is sleeping.",
-    image: "https://cdn-icons-png.flaticon.com/512/616/616408.png",
+    emoji: "🐱", // con mèo
   },
   {
     word: "tree",
     meaning: "cái cây",
     example: "There is a tree in the garden.",
-    image: "https://cdn-icons-png.flaticon.com/512/616/616430.png",
+    emoji: "🌳", // cái cây
   },
   {
     word: "phone",
     meaning: "điện thoại",
     example: "I call my friend with my phone.",
-    image: "https://cdn-icons-png.flaticon.com/512/167/167756.png",
+    emoji: "📱", // điện thoại
   },
   {
     word: "water",
     meaning: "nước",
     example: "I drink water every day.",
-    image: "https://cdn-icons-png.flaticon.com/512/616/616438.png",
+    emoji: "💧", // giọt nước
+  },
+  {
+    word: "sun",
+    meaning: "mặt trời",
+    example: "The sun is shining brightly.",
+    emoji: "☀️", // mặt trời
+  },
+  {
+    word: "moon",
+    meaning: "mặt trăng",
+    example: "The moon is beautiful tonight.",
+    emoji: "🌙", // mặt trăng
+  },
+  {
+    word: "fish",
+    meaning: "con cá",
+    example: "I like to eat fish.",
+    emoji: "🐟", // con cá
+  },
+  {
+    word: "bird",
+    meaning: "con chim",
+    example: "The bird is singing in the tree.",
+    emoji: "🐦", // con chim
+  },
+  {
+    word: "flower",
+    meaning: "bông hoa",
+    example: "She gave me a beautiful flower.",
+    emoji: "🌸", // bông hoa
+  },
+  {
+    word: "star",
+    meaning: "ngôi sao",
+    example: "I can see many stars at night.",
+    emoji: "⭐", // ngôi sao
+  },
+  {
+    word: "fire",
+    meaning: "lửa",
+    example: "We made a fire to keep warm.",
+    emoji: "🔥", // lửa
+  },
+  {
+    word: "clock",
+    meaning: "đồng hồ",
+    example: "The clock shows 3 o'clock.",
+    emoji: "🕐", // đồng hồ
+  },
+  {
+    word: "music",
+    meaning: "âm nhạc",
+    example: "I love listening to music.",
+    emoji: "🎵", // âm nhạc
+  },
+  {
+    word: "food",
+    meaning: "thức ăn",
+    example: "This food is very delicious.",
+    emoji: "🍽️", // thức ăn
   },
 ];
 
@@ -129,11 +189,36 @@ function HocTu() {
               marginBottom: 20,
             }}
           >
-            <img
-              src={w.image}
-              alt={w.word}
-              style={{ width: 60, height: 60, marginBottom: 10 }}
-            />
+            <div
+              style={{
+                width: 64,
+                height: 64,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                margin: "0 auto 12px auto",
+                background: "#f8fafc",
+                borderRadius: 12,
+                border: "2px solid #e2e8f0",
+                overflow: "hidden",
+              }}
+            >
+              <span
+                style={{
+                  fontSize: "32px",
+                  lineHeight: 1,
+                  transform: "scale(1)",
+                  display: "block",
+                  width: "32px",
+                  height: "32px",
+                  textAlign: "center",
+                  fontFamily:
+                    "Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif",
+                }}
+              >
+                {w.emoji}
+              </span>
+            </div>
             <h3 style={{ color: "#38bdf8" }}>{w.word}</h3>
             <div style={{ marginBottom: 8 }}>
               <b>Nghĩa:</b> {w.meaning}

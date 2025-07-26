@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Header from "./components/Menu/Header";
 import LoginForm from "./components/Login/LoginForm";
 import MainContent from "./components/MainContent";
-import Footer from "./components/Menu/Footer";
 import HocTu from "./components/NavBar/HocTu";
 import TuDien from "./components/NavBar/TuDien";
 import DanhSachTu from "./components/NavBar/DanhSachTu";
@@ -61,10 +60,6 @@ function App() {
         currentPage={currentPage}
       />
       {getContent()}
-      {currentPage !== "danhsachtu" &&
-        currentPage !== "hoctu" &&
-        currentPage !== "luyentap" &&
-        currentPage !== "tudien" && <Footer />}
     </div>
   );
 }
