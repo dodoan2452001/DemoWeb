@@ -11,7 +11,7 @@ const QUIZ_TYPES = [1, 2, 3];
 
 export default function LuyenTap() {
   const [words, setWords] = useState([]);
-  const [quizType, setQuizType] = useState(null); // 1,2,3,5
+  const [quizType, setQuizType] = useState(null);
   const [quizList, setQuizList] = useState([]);
   const [quizIdx, setQuizIdx] = useState(0);
   const [quizOptions, setQuizOptions] = useState([]);
@@ -20,7 +20,7 @@ export default function LuyenTap() {
   const [showNextBtn, setShowNextBtn] = useState(false);
   const [quizScore, setQuizScore] = useState(0);
   const [quizDone, setQuizDone] = useState(false);
-  const [currentSubType, setCurrentSubType] = useState(null); // for random mode
+  const [currentSubType, setCurrentSubType] = useState(null);
 
   useEffect(() => {
     const data = localStorage.getItem("vocab_words");
@@ -103,7 +103,7 @@ export default function LuyenTap() {
     if (type === 1 || type === 3) {
       setShowNextBtn(true);
     } else if (type === 2) {
-      setShowNextBtn(true); // chỉ hiện nút Câu tiếp theo, không chuyển câu tự động
+      setShowNextBtn(true);
     }
   }
 
@@ -116,7 +116,6 @@ export default function LuyenTap() {
       quizIdx,
       quizType === 5 ? currentSubType : null
     );
-    // eslint-disable-next-line
   }, [quizIdx, quizType, currentSubType]);
 
   function renderQuiz() {

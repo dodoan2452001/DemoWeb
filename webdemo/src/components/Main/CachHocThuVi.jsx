@@ -115,7 +115,6 @@ function CachHocThuVi({ isVisible, onClose }) {
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
         <button
           onClick={onClose}
           style={{
@@ -148,7 +147,6 @@ function CachHocThuVi({ isVisible, onClose }) {
           ×
         </button>
 
-        {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 25 }}>
           <h2
             style={{
@@ -169,7 +167,6 @@ function CachHocThuVi({ isVisible, onClose }) {
           </p>
         </div>
 
-        {/* Content */}
         <div
           style={{
             height: "500px",

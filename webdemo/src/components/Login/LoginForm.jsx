@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const USERS = [
+  { username: "admin", password: "123456" },
   { username: "user1", password: "123456" },
   { username: "user2", password: "abcdef" },
 ];

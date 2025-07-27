@@ -21,7 +21,6 @@ function TuTraCuu() {
   const handleSearch = (e) => {
     e.preventDefault();
     setSearched(true);
-    console.log("Searching for:", query); // Debug log
     if (!query.trim()) return;
     const found = words.find(
       (w) =>
@@ -32,7 +31,6 @@ function TuTraCuu() {
       setResult(found);
       setSuggestions([]);
     } else {
-      // Gợi ý từ gần đúng
       const sugg = words
         .filter(
           (w) =>
@@ -165,22 +163,9 @@ function TuTraCuu() {
           >
             <b>Nghĩa:</b> {result.meaning}
           </div>
-          <div
-            style={{
-              fontStyle: "italic",
-              fontSize: "16px",
-              background: "rgba(255,255,255,0.1)",
-              padding: "12px 16px",
-              borderRadius: 10,
-              backdropFilter: "blur(10px)",
-            }}
-          >
-            <b>Ví dụ:</b> {result.example}
-          </div>
         </div>
       )}
 
-      {/* Thông báo chỉ hiện khi đã bấm tìm kiếm */}
       {!result && searched && query.trim() && suggestions.length === 0 && (
         <div
           style={{

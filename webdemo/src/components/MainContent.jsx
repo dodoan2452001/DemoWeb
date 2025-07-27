@@ -22,7 +22,6 @@ function MainContent() {
 
   return (
     <main className="vocab-main">
-      {/* Hero Section */}
       <div className="hero-section">
         <div className="hero-content">
           <h1>📚 Tìm từ, ghi nhớ mãi mãi</h1>
@@ -31,7 +30,6 @@ function MainContent() {
             Giúp bạn xây dựng vốn từ vựng vững chắc và ghi nhớ lâu dài.
           </p>
 
-          {/* Stats */}
           <div className="stats-container">
             <div className="stat-item">
               <FaBook className="stat-icon" />
@@ -65,7 +63,6 @@ function MainContent() {
         </div>
       </div>
 
-      {/* Search Section */}
       <div className="search-section">
         <TuTraCuu />
         <div className="search-options">
@@ -73,7 +70,6 @@ function MainContent() {
         </div>
       </div>
 
-      {/* Features Section */}
       <div className="features-section">
         <h2 className="section-title">🎯 Tính năng nổi bật</h2>
         <section className="vocab-options">
@@ -113,10 +109,8 @@ function MainContent() {
         </section>
       </div>
 
-      {/* Testimonials */}
       <Testimonials />
 
-      {/* Call to Action */}
       <div className="cta-section">
         <h3>🚀 Bắt đầu hành trình học từ vựng ngay hôm nay!</h3>
         <p>
@@ -132,7 +126,6 @@ function MainContent() {
         </div>
       </div>
 
-      {/* Modals */}
       <TuDienHocTap
         isVisible={showTuDien}
         onClose={() => setShowTuDien(false)}

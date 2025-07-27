@@ -169,7 +169,6 @@ function PhuongPhapHieuQua({ isVisible, onClose }) {
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
         <button
           onClick={onClose}
           style={{
@@ -202,7 +201,6 @@ function PhuongPhapHieuQua({ isVisible, onClose }) {
           ×
         </button>
 
-        {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 25 }}>
           <h2
             style={{
@@ -221,7 +219,6 @@ function PhuongPhapHieuQua({ isVisible, onClose }) {
           </p>
         </div>
 
-        {/* Content */}
         <div
           style={{
             height: "500px",
@@ -291,7 +288,6 @@ function PhuongPhapHieuQua({ isVisible, onClose }) {
             </div>
           ))}
 
-          {/* Additional Tips */}
           <div
             style={{
               background: "rgba(44, 85, 48, 0.1)",

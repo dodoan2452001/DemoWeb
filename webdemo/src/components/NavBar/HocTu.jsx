@@ -5,121 +5,121 @@ const DAILY_WORDS = [
     word: "apple",
     meaning: "quả táo",
     example: "I eat an apple every morning.",
-    emoji: "🍎", // táo
+    emoji: "🍎",
   },
   {
     word: "book",
     meaning: "quyển sách",
     example: "She is reading a book.",
-    emoji: "📚", // sách
+    emoji: "📚",
   },
   {
     word: "car",
     meaning: "xe ô tô",
     example: "My father drives a car.",
-    emoji: "🚗", // xe ô tô
+    emoji: "🚗",
   },
   {
     word: "dog",
     meaning: "con chó",
     example: "The dog is barking.",
-    emoji: "🐕", // con chó
+    emoji: "🐕",
   },
   {
     word: "house",
     meaning: "ngôi nhà",
     example: "Her house is very big.",
-    emoji: "🏠", // ngôi nhà
+    emoji: "🏠",
   },
   {
     word: "pen",
     meaning: "cây bút",
     example: "I write with a pen.",
-    emoji: "✏️", // cây bút
+    emoji: "✏️",
   },
   {
     word: "cat",
     meaning: "con mèo",
     example: "The cat is sleeping.",
-    emoji: "🐱", // con mèo
+    emoji: "🐱",
   },
   {
     word: "tree",
     meaning: "cái cây",
     example: "There is a tree in the garden.",
-    emoji: "🌳", // cái cây
+    emoji: "🌳",
   },
   {
     word: "phone",
     meaning: "điện thoại",
     example: "I call my friend with my phone.",
-    emoji: "📱", // điện thoại
+    emoji: "📱",
   },
   {
     word: "water",
     meaning: "nước",
     example: "I drink water every day.",
-    emoji: "💧", // giọt nước
+    emoji: "💧",
   },
   {
     word: "sun",
     meaning: "mặt trời",
     example: "The sun is shining brightly.",
-    emoji: "☀️", // mặt trời
+    emoji: "☀️",
   },
   {
     word: "moon",
     meaning: "mặt trăng",
     example: "The moon is beautiful tonight.",
-    emoji: "🌙", // mặt trăng
+    emoji: "🌙",
   },
   {
     word: "fish",
     meaning: "con cá",
     example: "I like to eat fish.",
-    emoji: "🐟", // con cá
+    emoji: "🐟",
   },
   {
     word: "bird",
     meaning: "con chim",
     example: "The bird is singing in the tree.",
-    emoji: "🐦", // con chim
+    emoji: "🐦",
   },
   {
     word: "flower",
     meaning: "bông hoa",
     example: "She gave me a beautiful flower.",
-    emoji: "🌸", // bông hoa
+    emoji: "🌸",
   },
   {
     word: "star",
     meaning: "ngôi sao",
     example: "I can see many stars at night.",
-    emoji: "⭐", // ngôi sao
+    emoji: "⭐",
   },
   {
     word: "fire",
     meaning: "lửa",
     example: "We made a fire to keep warm.",
-    emoji: "🔥", // lửa
+    emoji: "🔥",
   },
   {
     word: "clock",
     meaning: "đồng hồ",
     example: "The clock shows 3 o'clock.",
-    emoji: "🕐", // đồng hồ
+    emoji: "🕐",
   },
   {
     word: "music",
     meaning: "âm nhạc",
     example: "I love listening to music.",
-    emoji: "🎵", // âm nhạc
+    emoji: "🎵",
   },
   {
     word: "food",
     meaning: "thức ăn",
     example: "This food is very delicious.",
-    emoji: "🍽️", // thức ăn
+    emoji: "🍽️",
   },
 ];
 

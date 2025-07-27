@@ -27,7 +27,7 @@ function TuDienHocTap({ isVisible, onClose }) {
       meaning: newMeaning,
       phonetic: newNote,
       example: newExample,
-      note: newNote, // Thêm note để tương thích với DanhSachTu
+      note: newNote,
       added: new Date().toISOString().slice(0, 10),
       review: 0,
     };
@@ -91,7 +91,6 @@ function TuDienHocTap({ isVisible, onClose }) {
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
         <button
           onClick={onClose}
           style={{
@@ -124,7 +123,6 @@ function TuDienHocTap({ isVisible, onClose }) {
           ×
         </button>
 
-        {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 25 }}>
           <h2
             style={{
@@ -141,7 +139,6 @@ function TuDienHocTap({ isVisible, onClose }) {
           </p>
         </div>
 
-        {/* Add Word Form */}
         <form
           onSubmit={handleAdd}
           style={{
@@ -262,7 +259,6 @@ function TuDienHocTap({ isVisible, onClose }) {
           </button>
         </form>
 
-        {/* Word List */}
         <div
           style={{
             height: "400px",

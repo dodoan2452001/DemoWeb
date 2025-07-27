@@ -255,7 +255,7 @@ function DanhSachTu() {
       </form>
       <div
         style={{
-          height: "calc(100vh - 260px)", // 260px là tổng chiều cao header, form, padding, có thể điều chỉnh lại nếu cần
+          height: "calc(100vh - 260px)",
           overflowY: "auto",
           borderRadius: 8,
           border: "1px solid #e0e0e0",

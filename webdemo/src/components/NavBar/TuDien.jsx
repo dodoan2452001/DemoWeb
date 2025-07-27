@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-// Demo từ điển mẫu, có thể mở rộng hoặc thay bằng API thật
 const DICTIONARY = [
   {
     word: "apple",
@@ -55,7 +54,6 @@ function TuDien() {
         [found.word, ...prev.filter((w) => w !== found.word)].slice(0, 5)
       );
     } else {
-      // Gợi ý từ gần đúng
       const sugg = DICTIONARY.filter((w) =>
         w.word.toLowerCase().includes(query.trim().toLowerCase())
       ).map((w) => w.word);
@@ -142,7 +140,6 @@ function TuDien() {
         </div>
       )}
 
-      {/* Thông báo chỉ hiện khi đã bấm tìm kiếm */}
       {!result && searched && query.trim() && suggestions.length === 0 && (
         <div
           style={{
