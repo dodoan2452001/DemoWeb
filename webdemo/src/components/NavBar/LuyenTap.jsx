@@ -116,7 +116,7 @@ export default function LuyenTap() {
       quizIdx,
       quizType === 5 ? currentSubType : null
     );
-  }, [quizIdx, quizType, currentSubType]);
+  }, [quizIdx, quizType, currentSubType, quizList, quizDone]);
 
   function renderQuiz() {
     if (!quizType) return null;
